@@ -27,7 +27,7 @@ for i in n:
   if(dec%5==0):
     res.append(i)
 
-print(",".join(res))5
+print(",".join(res))
 ```
 
 Write a Python program that accepts a sentence and calculate the number of
