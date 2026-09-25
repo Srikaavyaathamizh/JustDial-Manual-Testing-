@@ -210,7 +210,7 @@ groups = {}
 for word in skills:
     key = ''.join(sorted(word))
     if key not in groups:
-        groups[key] = [key]
+        groups[key] = []
     groups[key].append(word)
 
 print(list(groups.values()))
