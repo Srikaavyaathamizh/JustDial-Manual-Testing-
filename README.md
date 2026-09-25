@@ -163,3 +163,100 @@ print("Maximum product:", max)
 <img width="428" height="272" alt="image" src="https://github.com/user-attachments/assets/ad3fa1e8-3800-49f9-a3d5-4101277eec6d" />
 
 
+## 6. Customer Purchase History
+An e-commerce application stores the product IDs purchased by a customer in chronological order. The same product may appear multiple times. The system needs to determine the longest sequence of consecutive purchases in which every product ID is unique.
+
+```
+products = [101, 102, 103, 101, 104, 105]
+long = 0
+for i in range(len(products)):
+    unique = []
+    for j in range(i, len(products)):
+        if products[j] in unique:
+            break
+        unique.append(products[j])
+        if len(unique) > long:
+            long = len(unique)
+print("Longest sequence:", long)
+```
+## output:
+<img width="457" height="238" alt="image" src="https://github.com/user-attachments/assets/641165ef-bf20-4d8c-8b73-e82bb7009d55" />
+
+## 7. Bank Transaction Analysis
+A bank stores transaction amounts for a customer's account. A continuous group of transactions may add up to a specific target amount. The auditing system needs to determine how many different continuous transaction groups produce exactly the specified amount.
+
+```
+trans = [1, 2, 3, 2, 1]
+target = 5
+count = 0
+for i in range(len(trans)):
+    total = 0
+    for j in range(i, len(trans)):
+        total = total + trans[j]
+        if total == target:
+            count = count + 1
+print("Number of groups:", count)
+
+```
+## output:
+<img width="349" height="219" alt="image" src="https://github.com/user-attachments/assets/5d1afe25-f6dc-48b9-b436-5171e2f7ebc1" />
+
+## 8. Employee Skill Grouping
+A company receives a list of employee skill codes represented as strings. Employees having the same set of characters in their skill codes belong to the same skill category, even if the characters appear in a different order. The HR system needs to organize employees into appropriate skill groups.
+
+```
+skills = ["eat", "tea", "tan", "ate", "nat", "bat"]
+groups = {}
+for word in skills:
+    key = ''.join(sorted(word))
+    if key not in groups:
+        groups[key] = [key]
+    groups[key].append(word)
+
+print(list(groups.values()))
+```
+
+## Output:
+
+<img width="840" height="232" alt="image" src="https://github.com/user-attachments/assets/175efbd6-2e9a-47fe-8887-6978bce044da" />
+
+## 9. Network Packet Analysis
+A network monitoring system receives packet identifiers in chronological order. The system must determine the longest sequence of consecutive packets whose identifiers form a continuous numerical sequence, regardless of their original order in the incoming data.
+
+```
+packets = [100, 4, 200, 1, 3, 2]
+packets.sort()
+longest = 1
+current = 1
+for i in range(1, len(packets)):
+    if packets[i] == packets[i - 1] + 1:
+        current = current + 1
+    elif packets[i] != packets[i - 1]:
+        current = 1
+    if current > longest:
+        longest = current
+
+print("Longest sequence:", longest)
+```
+## output
+
+<img width="364" height="184" alt="image" src="https://github.com/user-attachments/assets/3a8c47cf-b60a-4e54-b744-8cee3a615f2b" />
+
+## 10. Hospital Appointment Scheduling
+A hospital receives appointment requests represented by starting and ending times. Some appointments overlap with each other. The scheduling system needs to combine overlapping appointment periods so that the final schedule contains only non-overlapping time ranges.
+```
+appoint = [[1, 3], [2, 6], [8, 10], [9, 12]]
+appoint.sort()
+result = []
+for appoint in appoint:
+    if not result or appoint[0] > result[-1][1]:
+        result.append(appoint)
+    else:
+        result[-1][1] = max(result[-1][1], appoint[1])
+
+print(result)
+```
+
+## output:
+
+<img width="386" height="225" alt="image" src="https://github.com/user-attachments/assets/71ed3172-c431-4a67-ae0f-5b471febbfe9" />
