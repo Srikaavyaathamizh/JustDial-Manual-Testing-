@@ -126,3 +126,40 @@ print(water)
 ## Output:
 
 <img width="233" height="253" alt="image" src="https://github.com/user-attachments/assets/6e381a2a-5048-46ff-8275-c13378f0deec" />
+
+## 4. Employee Performance Analysis
+A company stores the monthly performance scores of an employee for several months. The scores may contain both positive and negative values depending on the employee's performance. Management wants to identify the continuous period during which the employee achieved the highest overall performance.
+
+```
+scores = [2, -1, 3, 4, -2]
+max= scores[0]
+for i in range(len(scores)):
+    total = 0
+    for j in range(i, len(scores)):
+        total = total + scores[j]
+        if total > max:
+            max = total
+print("Maximum performance:", max)
+```
+
+## Output:
+<img width="360" height="191" alt="image" src="https://github.com/user-attachments/assets/fd48cd7b-dc37-4b26-a121-3521bccb669d" />
+
+## 5. Product Sales Analysis
+A retail company stores the daily sales quantity of a product for several consecutive days. Due to seasonal changes, some days may have negative adjustments. The company wants to identify the period that produced the highest multiplication of sales-related values. Develop a solution to determine this maximum product.
+
+```
+sales = [-2, 3, -4]
+max = sales[0]
+for i in range(len(sales)):
+    product = 1
+    for j in range(i, len(sales)):
+        product = product * sales[j]
+        if product > max:
+            max = product
+print("Maximum product:", max)
+```
+## output:
+<img width="428" height="272" alt="image" src="https://github.com/user-attachments/assets/ad3fa1e8-3800-49f9-a3d5-4101277eec6d" />
+
+
