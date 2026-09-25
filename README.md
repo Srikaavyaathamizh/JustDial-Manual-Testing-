@@ -70,3 +70,59 @@ for i in range(1,n+1):
 print(fact)
 
 ```
+
+## Date:25/09/2026
+## 1. Student Attendance Analysis
+A college maintains the daily attendance details of its students in the form of a list containing student IDs. Some students may have attended multiple sessions on the same day. The administration wants to identify the longest continuous sequence of sessions in which no student ID is repeated. Develop a solution that determines the maximum length of such a sequence.
+
+```
+stu = [101, 102, 103, 101, 104, 105]
+long = 0
+for i in range(len(stu)):
+    seen = []
+    for j in range(i, len(stu)):
+        if stu[j] in seen:
+            break
+        seen.append(stu[j])
+        if len(seen) > long:
+            long = len(seen)
+print(long)
+```
+## output:
+<img width="371" height="210" alt="image" src="https://github.com/user-attachments/assets/f7f11a76-a65e-485b-86d6-98cd4fdd8c75" />
+
+## 2. Online Shopping Price Analysis
+An online shopping application stores the prices of products viewed by a customer during a browsing session. The customer wants to identify a continuous range of products that provides the maximum possible total discount value. Given the discount values, determine the maximum value that can be obtained from any continuous range.
+
+```
+
+dis = [2, -1, 3, 4, -2]
+max = dis[0]
+for i in range(len(dis)):
+    total = 0
+    for j in range(i, len(dis)):
+        total = total + dis[j]
+        if total > max:
+            max= total
+print(max)
+```
+
+## Output :
+<img width="278" height="199" alt="image" src="https://github.com/user-attachments/assets/11327190-792a-4189-8766-77f0296fba15" />
+
+## 3. Rainwater Collection System
+A city installs buildings of different heights along a straight road. During rainfall, water gets collected between taller buildings. The engineering team needs to calculate the total amount of water that can remain trapped after heavy rainfall based on the heights of the buildings.
+
+```
+heights = [3, 0, 2, 0, 4]
+water = 0
+for i in range(len(heights)):
+    left = max(heights[:i + 1])
+    right= max(heights[i:])
+    trapped = min(left, right) - heights[i]
+    water = water + trapped
+print(water)
+```
+## Output:
+
+<img width="233" height="253" alt="image" src="https://github.com/user-attachments/assets/6e381a2a-5048-46ff-8275-c13378f0deec" />
